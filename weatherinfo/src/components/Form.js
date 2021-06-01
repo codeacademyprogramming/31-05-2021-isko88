@@ -23,9 +23,9 @@ export default function Form() {
 
             <List component="nav" aria-label="contacts">
                
-                {datalist.data ? datalist.data.map(data => {
+                {datalist.data ? datalist.data.map((data,idx) => {
                     { console.log(data,"formdan") }
-                    <ListItem button>
+                    <ListItem key={idx} button >
                         <ListItemText primary={`${data.name} ${data.main.temp}`} />
                     </ListItem>
                 }) : "Loading"}
