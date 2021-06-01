@@ -8,9 +8,7 @@ export default function Form() {
 
     const dispatch = useDispatch();
     const datalist = useSelector(state => state.weather);
-    console.log(datalist, "datalist")
     const handleEnter = React.useCallback((evt) => {
-        console.log(evt.target.value)
         if (evt.key === "Enter") {
             getCityWeather(evt.target.value, dispatch)
         }
@@ -24,10 +22,11 @@ export default function Form() {
             </FormControl>
 
             <List component="nav" aria-label="contacts">
+               
                 {datalist.data ? datalist.data.map(data => {
-                    { console.log(data) }
+                    { console.log(data,"formdan") }
                     <ListItem button>
-                        <ListItemText primary="Chelsea Otakan" />
+                        <ListItemText primary={`${data.name} ${data.main.temp}`} />
                     </ListItem>
                 }) : "Loading"}
             </List>
