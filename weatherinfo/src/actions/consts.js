@@ -1,0 +1,3 @@
+export const WEATHER = {
+    GET_WEATHER_BY_CITY:"GET_WEATHER_BY_CITY"
+}
